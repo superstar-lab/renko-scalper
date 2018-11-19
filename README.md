@@ -8,11 +8,11 @@ The key idea behind this public repository is to provide a centralized point of 
 Our team is using [OnixS](https://www.onixs.biz/) FIX Engine but we also will provide samples on top of [QuickFIX](http://www.quickfixengine.org/) and, probably, [Fix8](http://www.fix8.org/). 
 
 ## Documentation
-* [XTRD FIX API for Market Data](/xtrd/xtrd_demos/wiki/api/marketdata)
-* [XTRD FIX API for Trading](/xtrd/xtrd_demos/wiki/api/trading)
+* [XTRD FIX API for Market Data](https://bitbucket.org/xtrd/xtrd_demos/wiki/api/marketdata)
+* [XTRD FIX API for Trading](https://bitbucket.org/xtrd/xtrd_demos/wiki/api/trading)
 
 ##Samples
 
 Project name | Language | Engine | Description
 - | - | - | - |
-[md_reader](/xtrd/xtrd_demos/src/master/md_reader/) | Java| OnixS | An application that constantly subscribes on pre-defined symbols list, reads the feed for during some amount(randomly selected) of time, then disconnects and connects again. 
+[md_reader](https://bitbucket.org/xtrd/xtrd_demos/src/master/md_reader/) | Java| OnixS | An application that constantly subscribes on pre-defined symbols list, reads the feed for during some amount(randomly selected) of time, then disconnects and connects again. 
