@@ -29,7 +29,7 @@ public class Core {
     private MessagesFactory messagesFactory = new MessagesFactory();
     private ScheduledExecutorService workers = null;
     private Context context = null;
-    private List<Symbol> symbols = new ArrayList();
+    private List<String> exchanges = new ArrayList();
 
     public void init(String configName) throws Exception {
         config = new Properties();
@@ -38,17 +38,19 @@ public class Core {
         context = new Context(config, workers, messagesFactory);
         initFixEngine();
         initSession();
-        loadSymbols();
+        loadExchanges();
     }
 
-    private void loadSymbols() {
-        String pairs[] = config.getProperty(ConfigKeys.SYMBOLS).split(",");
-        for(int i = 0;i < pairs.length;i++) {
-            String symbolParts[] = pairs[i].split(" ");
-            Symbol symbol = new Symbol(symbolParts[0], symbolParts[1]);
-            symbols.add(symbol);
-            if(logger.isDebugEnabled()) logger.debug("Loaded Symbol {}", symbol);
+    private void loadExchanges() {
+        String parts[] = config.getProperty(ConfigKeys.EXCHANGES).split(",");
+        for(int i = 0;i < parts.length;i++) {
+            if(logger.isDebugEnabled()) logger.debug("Loaded Exchange {}", parts[i]);
+            exchanges.add(parts[i]);
         }
+    }
+
+    private String getRequestId() {
+        return String.valueOf(System.currentTimeMillis());
     }
 
     public void start() {
@@ -79,13 +81,16 @@ public class Core {
         String targetCompId = config.getProperty(ConfigKeys.TARGET_COMP_ID, "");
         if(logger.isDebugEnabled()) logger.debug("Creating session {}/{}", senderCompId, targetCompId);
         listener = new Listener();
+        listener.setSecurityListener((symbol, last) -> {
+            workers.schedule(new Subscribe(context.getNextId(), symbol, session, context), 0, TimeUnit.SECONDS);
+        });
 
-        session = new Session(senderCompId, targetCompId, Version.FIX44);
+        Version version = Version.getById("XTRD");
+        session = new Session(senderCompId, targetCompId, version);
         session.setInboundApplicationMessageListener(listener);
         session.addStateChangeListener((sender, args) -> {
             if(args.getNewState() == SessionState.ESTABLISHED) {
-                //Connection is established, lets initiate market data subscriptions
-                symbols.forEach(symbol -> workers.schedule(new Subscribe(context.getNextId(), symbol, session, context), 0, TimeUnit.SECONDS));
+                exchanges.forEach(exchangeName -> session.send(messagesFactory.getSecurityList(getRequestId(), exchangeName)));
             }
         });
     }

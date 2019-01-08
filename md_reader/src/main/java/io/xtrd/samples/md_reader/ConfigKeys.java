@@ -4,7 +4,7 @@ public class ConfigKeys {
     public static final String SYSTEM_JOIN_TIMEOUT = "system.join_timeout";
     public static final String FIX_ENGINE_SETTINGS = "fix.engine.settings";
 
-    public static final String SYMBOLS = "simulator.symbols";
+    public static final String EXCHANGES = "simulator.exchanges";
     public static final String BOOK_DEPTH = "fix.book_depth";
 
     public static final String HOST = "fix.host";

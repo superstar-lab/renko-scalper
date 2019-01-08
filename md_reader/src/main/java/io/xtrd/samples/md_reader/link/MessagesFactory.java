@@ -18,6 +18,16 @@ public class MessagesFactory {
         return result;
     }
 
+    public Message getSecurityList(String id, String exchangeName) {
+        Message result = Message.create(FIX44.MsgType.SecurityListRequest, Version.FIX44);
+
+        result.set(Tag.SecurityReqID, id);
+        result.set(Tag.SecurityListRequestType, FIX44.SecurityListRequestType.AllSecurities);
+        result.set(Tag.SecurityExchange, exchangeName);
+
+        return result;
+    }
+
     public Message getMarketDataSubscribe(int id, int depth, String symbolName, String exchangeName) {
         Message result = Message.create(FIX44.MsgType.MarketDataRequest, Version.FIX44);
 
