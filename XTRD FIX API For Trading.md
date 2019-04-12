@@ -16,7 +16,7 @@
 	* OrderMassStatusRequest
 
 ##Order states diagram
-![Alt text](https://bitbucket.org/xtrd/xtrd_demos/raw/09b4c558bc6159426aecd4a516ab96e0e2088bb6/repo1/1.png)
+![Alt text](https://bitbucket.org/xtrd/xtrd_demos/raw/09b4c558bc6159426aecd4a516ab96e0e2088bb6/repo1/2.png)
 ##Dictionaries
 ###Security Type
 
