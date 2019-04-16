@@ -185,6 +185,19 @@ This message will be sent by the server in response to OrderCancelRequest if the
 |          |                       |          |                                | 12=ORD_1234              |
 | 37       | OrderID               |   Y      | Order ID on our side           | 37=312351043             |
 | 17       | ExecID                |   Y      | Order execution ID             | 17=4000123541            |
+| 584      | MassStatusReqId       |   N      | Request ID, associated with    | 584=ord_req_1223         |
+|          |                       |          | MassOrdertStatusRequest message|                          |
+| 911      | TotNumReports         |   N      | A conditional field that will  | 911=14                   |
+|          |                       |          | appear in the response to Order|                          |
+|          |                       |          |Mass Status Request(AF) message.|                          |
+|          |                       |          | Contains a total number of all |                          |
+|          |                       |          |orders that meet search criteria|                          |
+|          |                       |          | MassOrdertStatusRequest message|                          |
+| 912      | LastRptRequested      |   N      | A conditional field that       | 913=Y                    |
+|          |                       |          | appears only for reports with  |                          |
+|          |                       |          | ExecType=ORDER STATUS.         |                          |
+|          |                       |          | Indicates that this is the very|                          |
+|          |                       |          | last message in the batch      |                          |
 | 40       | OrdType               |   Y      | Order Type (Market,            | 40=1                     |
 |          |                       |          | Limit, Stop, etc)              |                          |
 | 44       | Price                 |   C      | Conditional field,             | 44=0.033953              |
