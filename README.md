@@ -15,4 +15,5 @@ Our team is using [OnixS](https://www.onixs.biz/) FIX Engine but we also will pr
 
 Project name | Language | Engine | Description
 - | - | - | - |
-[md_reader](https://bitbucket.org/xtrd/xtrd_demos/src/master/md_reader/) | Java| OnixS | An application that constantly subscribes on pre-defined symbols list, reads the feed for during some amount(randomly selected) of time, then disconnects and connects again. 
+[md_reader #1](https://bitbucket.org/xtrd/xtrd_demos/src/master/md_reader/) | Java| OnixS | An application that constantly subscribes on pre-defined symbols list, reads the feed for during some amount(randomly selected) of time, then disconnects and connects again. 
+[md_reader #2](https://bitbucket.org/xtrd/xtrd_demos/src/master/market_data/onixs-cpp/) | C++ | OnixS | Application sample that uses OnixS FIX engine library to subscribe and parse market data. 
