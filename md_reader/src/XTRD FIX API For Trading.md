@@ -1,31 +1,33 @@
-#FIX API Specification - Orders
+# FIX API Specification - Orders
 
-* Order states diagram
-* Dictionaries
-	* Security Type
-	* Order Types
-	* Order Sides
-	* Time in Force
-* Messages
-	* Logon
-	* Logout
-	* NewOrderSingle
-	* OrderCancelRequest
-	* OrderCancelReject
-	* ExecutionReport
-	* OrderMassStatusRequest
+* [Order states diagram](#markdown-header-order-states-diagram)
+* [Dictionaries](#markdown-header-dictionaries)
+	* [Security type](#markdown-header-security-type)
+	* [Order Types](#markdown-header-order-types)
+	* [Order Sides](#markdown-header-order-sides)
+	* [Time in Force](#markdown-header-time-in-force)
+* [Messages](#markdown-header-messages)  
+	* [Logon](#markdown-header-logon)
+	* [Logout](#markdown-header-logout)
+	* [NewOrderSingle](#markdown-header-newordersingle)
+	* [OrderCancelRequest](#markdown-header-ordercancelrequest)
+	* [OrderCancelReject](#markdown-header-ordercancelreject)
+	* [ExecutionReport](#markdown-header-executionreport)
+	* [OrderMassStatusRequest](#markdown-header-ordermassstatusrequest)
+	
+[return on start page](https://bitbucket.org/xtrd/xtrd_demos/src/master/)
 
-##Order states diagram
+## Order states diagram
 ![Alt text](https://bitbucket.org/xtrd/xtrd_demos/raw/a233b52f193443871de90bc6ca63b965f458f40a/md_reader/src/repo/2.png)
-##Dictionaries
-###Security Type
+## Dictionaries
+### Security type
 
 |   Type                     | Value    | Description                                  |
 |:---------------------------|:-------- |:---------------------------------------------|
 | Foreign Exchange Contract  | FOR      | All crypto to crypto, crypto to fiat or  Y   |
 |                            |          | fiat to fiat pairs                           |
 
-###Order Types
+### Order Types
 
 |   Order Type    | Comments                                                     |
 |:----------------|:-------------------------------------------------------------|
@@ -36,12 +38,15 @@
 | Stop(3)         | For Stop orders, corresponding stop price should be set in   |
 |                 | the StopPx(99) field                                         |
 
-###Order Sides
+### Order Sides
 
-Supported 3 sides:  
+Supported 2 sides:  
 	* Buy(1)  
 	* Sell(2)  
-###Time in Force
+***
+
+### Time in force
+
 
 |    Type                | Comments                                                     |
 |:-----------------------|:-------------------------------------------------------------|
@@ -53,9 +58,17 @@ Supported 3 sides:
 | Fill Or Kill(4)        | Order will be filled for the quantity specified in OrderQt,  |
 |                        | else will be canceled                                        |
 
-##Messages
 
-###Logon
+ ***
+ 
+[top of page](#markdown-header-fix-api-specification-orders)
+
+ ***
+
+
+# Messages
+
+## Logon
 
 |  Tag     | Field Name            | Required | Comments                       | Example             |
 |:---------|:--------------------- |:--------:| :------------------------------|:--------------------|
@@ -64,13 +77,23 @@ Supported 3 sides:
 | 553      | Username              |   Y      |                                | 553=1001            |
 | 554      | Password              |   Y      |                                | 554=Rr68twd6mw      |
 
-###Logout
+## Logout
 
 |  Tag     | Field Name            | Required | Comments                       | Example                  |
 |:---------|:--------------------- |:--------:| :------------------------------|:-------------------------|
 | 58       | Text                  |   N      | Optional text                  | 58=regular disconnection |
 
-##NewOrderSingle
+
+
+ ***
+ 
+[top of page](#markdown-header-fix-api-specification-orders)
+
+ ***
+
+
+
+## NewOrderSingle
 
 |  Tag     | Field Name            | Required | Comments                       | Example                  |
 |:---------|:--------------------- |:--------:| :------------------------------|:-------------------------|
@@ -117,8 +140,17 @@ Supported 3 sides:
 |          |                       |          | FOR - Foreign exchange         |                          |
 |          |                       |          | conract                        |                          |
 
-##OrderCancelRequest  
-  
+
+ ***
+ 
+[top of page](#markdown-header-fix-api-specification-orders)
+
+ ***
+
+
+#
+## OrderCancelRequest  
+
 OrderCancelRequest is used to cancel the order in its entirety. Only orders in NEW or PARTIALLY_FILLED statuses can be canceled.  
   
 If you need to cancel only a part of the non-filled amount (leaves quantity), please refer to OrderCancelReplaceRequest.  
@@ -131,7 +163,7 @@ If you need to cancel only a part of the non-filled amount (leaves quantity), pl
 |          |                       |          | cancel operation               |                          |
 | 37       | OrderID               |   Y      | OrderID which should           | 37=312351044             |
 |          |                       |          | be canceled                    |                          |
-| 41       | OrigClOrdID           |   Y      | Client order ID of order       | 41=1233               |
+| 41       | OrigClOrdID           |   Y      | Client order ID of order       | 41=1233                  |
 |          |                       |          | which should be                |                          |
 |          |                       |          | canceled                       |                          |
 | 54       | Side                  |   Y      | Order side of order,           | 51=1                     |
@@ -143,7 +175,16 @@ If you need to cancel only a part of the non-filled amount (leaves quantity), pl
 |          |                       |          | included milliseconds          |                          |
 
 
-##OrderCancelReject
+ ***
+ 
+[top of page](#markdown-header-fix-api-specification-orders)
+
+ ***
+
+
+ 
+## OrderCancelReject 
+ 
 
 This message will be sent by the server in response to OrderCancelRequest if the operation failed for some reason.  
 
@@ -175,7 +216,17 @@ This message will be sent by the server in response to OrderCancelRequest if the
 |          |                       |          | timezone when Order            | 15.105                   |
 |          |                       |          | can rejected                   |                          |
 
-##ExecutionReport
+
+ ***
+ 
+[top of page](#markdown-header-fix-api-specification-orders)
+
+ ***
+
+
+
+## ExecutionReport
+
 
 |  Tag     | Field Name            | Required | Comments                       | Example                  |
 |:---------|:--------------------- |:--------:| :------------------------------|:-------------------------|
@@ -267,7 +318,17 @@ This message will be sent by the server in response to OrderCancelRequest if the
 |          |                       |          | FOR - Foreign Exchange         |                          |
 |          |                       |          | Contract                       |                          |
 
-##OrderMassStatusRequest
+
+
+ ***
+ 
+[top of page](#markdown-header-fix-api-specification-orders)
+
+ ***
+
+
+
+## OrderMassStatusRequest
 
 This message is used when counterparty needs to obtain a list of list(working) orders that match certain criteria. 
 
@@ -286,3 +347,15 @@ A response will be provided through a series of ExecutionReports that contains E
 | 1        | Account               |   N      | Optional field, that required  | 1=1001                   |
 |          |                       |          | when queries for all orders    |                          |
 |          |                       |          | for certain trading Login      |                          |
+
+
+
+ ***
+ 
+[top of page](#markdown-header-fix-api-specification-orders) 
+
+***
+
+[return on start page](https://bitbucket.org/xtrd/xtrd_demos/src/master/)
+
+ ***
