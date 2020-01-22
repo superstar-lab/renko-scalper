@@ -168,7 +168,7 @@ URL: /rest/exchanges/[EXCHANGE]/symbols
 
 #### Get symbol
 ###### Description: get detailed information about a particular symbol
-URL: /rest/exchanges/`[EXCHANGE]`/symbols/`[SYMBOL]`
+URL: /rest/exchanges/[EXCHANGE]/symbols/[SYMBOL]
 ###### EXCHANGE could be name or id
 ###### SYMBOL could be name or id , where symbol name = `[base asset name]` - `[quote asset name]` 
 ##### Request 
