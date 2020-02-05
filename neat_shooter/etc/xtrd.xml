@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Dialect xmlns="http://ref.onixs.biz/fix/dialects"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://ref.onixs.biz/fix/dialects http://ref.onixs.biz/fix/dialects/dialects-2_14.xsd">
+
+    <FIX version="4.4" id="XTRD">
+        <Message type="y">
+            <Group numberOfInstancesTag="146" name="PriceSizeFactor">
+                <Field tag="5001" name="PricePrecision" isRequired="true"/>
+                <Field tag="5002" name="SizePrecision" isRequired="true"/>
+            </Group>
+        </Message>
+        <Message type="X">
+            <Group numberOfInstancesTag="268" name="NoMDEntries">
+                <Field tag="2446" name="AggressorSide" isRequired="false"/>
+                <Field tag="55" mode="remove"/>
+            </Group>
+            <Field tag="55" mode="override" name="Symbol" isRequired="true"/>
+        </Message>
+
+        <Message type="W">
+            <Group numberOfInstancesTag="268" name="NoMDEntries">
+                <Field tag="55" mode="remove"/>
+            </Group>
+            <Field tag="55" mode="override" name="Symbol" isRequired="true"/>
+        </Message>
+    </FIX>
+
+
+</Dialect>

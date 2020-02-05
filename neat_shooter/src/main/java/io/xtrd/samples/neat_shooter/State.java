@@ -1,0 +1,19 @@
+package io.xtrd.samples.neat_shooter;
+
+public enum State {
+    UNDEFINED,
+    APP_START,
+    MD_DISCONNECTED,
+    MD_CONNECTING,
+    MD_CONNECTED,
+    MD_WAIT_FOR_DATA,
+    MD_READY,
+    ORD_DISCONNECTED,
+    ORD_CONNECTING,
+    ORD_CONNECTED,
+    ORD_POS_SYNCING,
+    ORD_ORD_SYNCING,
+    ORD_READY,
+    APP_ENTER_MARKET,
+    APP_EXIT_MARKET
+}
