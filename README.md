@@ -8,8 +8,8 @@ The key idea behind this public repository is to provide a centralized point of 
 Our team is using [OnixS](https://www.onixs.biz/) FIX Engine but we also will provide samples on top of [QuickFIX](http://www.quickfixengine.org/) and, probably, [Fix8](http://www.fix8.org/). 
 
 ## Documentation
-* [XTRD FIX API for Market Data](https://bitbucket.org/xtrd/xtrd_demos/wiki/api/marketdata)
-* [XTRD FIX API for Trading](https://bitbucket.org/xtrd/xtrd_demos/wiki/api/trading)
+* [XTRD FIX API for Market Data](https://xtrd.io/fix-api-specification-market-data/)
+* [XTRD FIX API for Trading](https://xtrd.io/fix-api-specification-orders/)
 * [XTRD PUBLIC API](https://bitbucket.org/xtrd/xtrd_demos/src/master/md_reader/src/XTRD_PUBLIC_API.md)
 
 ##Samples
