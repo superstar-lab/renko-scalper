@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<fix8>
+  <session name="XTRDDEMO2"
+           active="true"
+           role="initiator"
+           ip="127.0.0.1"
+           port="5004"
+           sender_comp_id="SAMPLES-DEMO"
+           target_comp_id="XTRD-MD-UAT"
+           login_retry_interval="15000"
+           heartbeat_interval="10"
+           reset_sequence_numbers="true"
+           tcp_nodelay="true"
+           login_retries="100"
+
+           process_model="pipelined"
+
+           session_log="session_log_0"
+           protocol_log="protocol_log_0"
+           persist="mem0"
+
+           xtrd_username="samples"
+           xtrd_password="password"
+           xtrd_market_depth="20"
+           xtrd_subscriptions="BINANCE:ETH/BTC,BINANCE:BTC/USDT,HUOBI:ETH/BTC,HUOBI:BTC/USDT"
+   />
+
+   <log name="protocol_log_0"
+        type="protocol"
+        flags="sequence|timestamp|sstart|thread|direction|inbound|outbound"
+        filename="protocol0.log"/>
+
+   <log name="session_log_0"
+        type="session"
+        levels="debug|info|warn|error|fatal"
+        flags="sequence|timestamp|sstart|thread|location|level"
+        filename="session0.log"/>
+
+   <persist name="mem0"
+            type="mem"/>
+
+</fix8>
