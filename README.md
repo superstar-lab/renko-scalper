@@ -14,10 +14,13 @@ Our team is using [OnixS](https://www.onixs.biz/) FIX Engine but we also will pr
 
 ##Samples
 
-Project name | Language | Engine | Description
-- | - | - | - |
-[Neat Shooter](https://bitbucket.org/xtrd/xtrd_demos/src/master/neat_shooter/) | Java| OnixS | An application that combines both market data and trading functions by reading Huobi market data over the FIX API and constantly sends requests to open and cancel orders. 
-[md_reader #1](https://bitbucket.org/xtrd/xtrd_demos/src/master/md_reader/) | Java| OnixS | An application that constantly subscribes on pre-defined symbols list, reads the feed for during some amount(randomly selected) of time, then disconnects and connects again. 
-[md_reader #2](https://bitbucket.org/xtrd/xtrd_demos/src/master/market_data/onixs-cpp/) | C++ | OnixS | Application sample that uses OnixS FIX engine library to subscribe and parse market data. 
-[md_reader #3](https://bitbucket.org/xtrd/xtrd_demos/src/master/market_data/quickfix-cpp/) | C++ | QuickFIX |  A very simple application that uses QuickFIX library. Connects to market data streamer, subscribe and parse incoming MarketData - Snapshot/FullRefresh and MarketData - IncrementalRefresh  messages.
-[md_reader #4](https://bitbucket.org/xtrd/xtrd_demos/src/master/market_data/fix8-cpp/) | C++ | Fix8 |  A very simple application that uses Fix8 library. Connects to market data streamer, subscribe and parse incoming MarketData - Snapshot/FullRefresh and MarketData - IncrementalRefresh  messages.
+|Project name | Language | Engine | Description|
+|---|---|---|---|
+|[Neat Shooter](https://bitbucket.org/xtrd/xtrd_demos/src/master/neat_shooter/) | Java| OnixS | An application that combines both market data and trading functions by reading Huobi market data over the FIX API and constantly sends requests to open and cancel orders. |
+|[Pythod Trader](https://bitbucket.org/xtrd/xtrd_demos/src/master/python_trader)|Python|QuickFIX|Python-based application that illustrates basic techniques of a trading workflow - getting open orders, positions synchronization, sending and canceling orders, parsing ExecutionReports|
+|[md_reader #1](https://bitbucket.org/xtrd/xtrd_demos/src/master/md_reader/) | Java| OnixS | An application that constantly subscribes on pre-defined symbols list, reads the feed for during some amount(randomly selected) of time, then disconnects and connects again. |
+|[md_reader #2](https://bitbucket.org/xtrd/xtrd_demos/src/master/market_data/onixs-cpp/) | C++ | OnixS | Application sample that uses OnixS FIX engine library to subscribe and parse market data. |
+|[md_reader #3](https://bitbucket.org/xtrd/xtrd_demos/src/master/market_data/quickfix-cpp/) | C++ | QuickFIX |  A very simple application that uses QuickFIX library. Connects to market data streamer, subscribe and parse incoming MarketData - Snapshot/FullRefresh and MarketData - IncrementalRefresh  messages.|
+|[md_reader #4](https://bitbucket.org/xtrd/xtrd_demos/src/master/market_data/fix8-cpp/) | C++ | Fix8 |  A very simple application that uses Fix8 library. Connects to market data streamer, subscribe and parse incoming MarketData - Snapshot/FullRefresh and MarketData - IncrementalRefresh  messages.|
+
+
