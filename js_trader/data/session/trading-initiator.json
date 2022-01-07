@@ -1,0 +1,25 @@
+{
+    "application": {
+        "reconnectSeconds": 10,
+        "type": "initiator",
+        "name": "trading_client",
+        "tcp": {
+            "host": "localhost",
+            "port": 5003
+        },
+        "protocol": "ascii",
+        "dictionary": "../../data/XTRD.xml"
+    },
+    "Username": "python",
+    "Password": "password",
+    "SenderCompId": "JS-DEMO",
+    "TargetCompID": "XTRD-ORD-UAT",
+    "ResetSeqNumFlag": true,
+    "BeginString": "FIX.4.4",
+    "LogonTimeout": 30,
+    "ResetOnLogon": true,
+    "HeartBtInt": 30,
+    "CheckLatency": false,
+    "MaxLatency": 240,
+    "UseDataDictionary": true
+}

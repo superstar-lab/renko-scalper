@@ -1,0 +1,25 @@
+{
+    "application": {
+        "reconnectSeconds": 10,
+        "type": "initiator",
+        "name": "md_client",
+        "tcp": {
+            "host": "streamer1.ny4.xtrd-staging.lan",
+            "port": 5002
+        },
+        "protocol": "ascii",
+        "dictionary": "../../data/XTRD.xml"
+    },
+    "Username": "A_RADCHENKO",
+    "Password": "password",
+    "SenderCompId": "JS-DEMO",
+    "TargetCompID": "XTRD-MD-UAT",
+    "ResetSeqNumFlag": true,
+    "BeginString": "FIX.4.4",
+    "LogonTimeout": 30,
+    "ResetOnLogon": true,
+    "HeartBtInt": 30,
+    "CheckLatency": false,
+    "MaxLatency": 240,
+    "UseDataDictionary": true
+}
